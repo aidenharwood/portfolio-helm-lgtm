@@ -8,7 +8,9 @@ lgtm:
     #   org_role = Viewer
     #   hide_version = true
   tempo:
-    minio:      
+    minio:
+      mcImage:
+        tag: RELEASE.2023-04-06T16-51-10Z # Why does the official chart not use this version?
       buckets:
         - name: tempo-traces
           policy: none
