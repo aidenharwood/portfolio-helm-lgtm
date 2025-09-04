@@ -16,12 +16,12 @@ lgtm:
           trace:
             backend: s3
             s3:
+              bucket: tempo-traces
               endpoint: lgtm-minio.local:9000
               insecure: true
-              access_key_id: lgtm
-              secret_access_key: minio123
-              http:
-                insecure_skip_verify: true
+              access_key: lgtm
+              secret_key: minio123
+              insecure: true
   mimir:
     minio:
       enabled: false
