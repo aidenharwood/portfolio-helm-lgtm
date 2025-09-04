@@ -1,1 +1,4 @@
-# lgtm-distributed:
+lgtm-distributed:
+  minio:
+    persistence:
+      storageClass: standard
