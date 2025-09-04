@@ -23,11 +23,11 @@ lgtm:
               http:
                 insecure_skip_verify: true
   mimir:
+    ingester:
+      replicas: 1
     mimir:
       minio:
         enabled: false
-      ingester:
-        replicas: 1
       structuredConfig:
         common:
           storage:
