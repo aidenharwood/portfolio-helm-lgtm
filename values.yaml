@@ -1,4 +1,4 @@
 lgtm:
   mimir:
     minio:
-      enabled: false
+      # enabled: false
