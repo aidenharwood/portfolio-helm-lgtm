@@ -10,18 +10,18 @@ lgtm:
   tempo:
     minio:
       enabled: false
-    tempo:
-      structuredConfig:
-        common:
-          storage:
-            backend: s3
-            s3:
-              endpoint: minio.local:9000
-              insecure: true
-              access_key_id: lgtm
-              secret_access_key: minio123
-              http:
-                insecure_skip_verify: true
+    # tempo:
+    #   structuredConfig:
+    #     common:
+    #       storage:
+    #         backend: s3
+    #         s3:
+    #           endpoint: minio.local:9000
+    #           insecure: true
+    #           access_key_id: lgtm
+    #           secret_access_key: minio123
+    #           http:
+    #             insecure_skip_verify: true
   mimir:
     minio:
       enabled: false
