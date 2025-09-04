@@ -2,6 +2,11 @@ lgtm:
   grafana:
     env:
       GF_INSTALL_PLUGINS: grafana-metricsdrilldown-app,grafana-exploretraces-app,grafana-lokiexplore-app
+    grafana.ini: |
+      [auth.anonymous]
+      enabled = true
+      org_role = Viewer
+      hide_version = true
   tempo:
     minio:      
       buckets:
