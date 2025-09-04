@@ -13,7 +13,7 @@ lgtm:
   mimir:
     minio:
       enabled: false
-    alertmanager_storage:
+    ruler_storage:
       type: s3
       s3:
         bucketnames: mimir-ruler
