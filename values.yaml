@@ -26,24 +26,23 @@ lgtm:
     ingester:
       replicas: 1
     structuredConfig:
-      overrides:
-        common:
-          storage:
-            type: s3
-            s3:
-              endpoint: minio.local:9000
-              insecure: true
-              access_key_id: lgtm
-              secret_access_key: minio123
-        blocks_storage:
+      common:
+        storage:
+          type: s3
           s3:
-            bucket_name: mimir-tsdb
-        alertmanager_storage:
-          s3:
-            bucket_name: mimir-alertmanager
-        ruler_storage:
-          s3:
-            bucket_name: mimir-ruler
+            endpoint: minio.local:9000
+            insecure: true
+            access_key_id: lgtm
+            secret_access_key: minio123
+      blocks_storage:
+        s3:
+          bucket_name: mimir-tsdb
+      alertmanager_storage:
+        s3:
+          bucket_name: mimir-alertmanager
+      ruler_storage:
+        s3:
+          bucket_name: mimir-ruler
 
 minio:
   replicas: 2
