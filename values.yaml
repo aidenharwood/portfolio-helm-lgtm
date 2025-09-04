@@ -44,7 +44,7 @@ lgtm:
           bucket_name: mimir-ruler
 
 minio:
-  replicas: 1
+  replicas: 4
   accessKey: lgtm
   secretKey: minio123
   resources:
