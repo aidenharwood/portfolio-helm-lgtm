@@ -1,5 +1,7 @@
 lgtm:
   grafana:
+    image:
+      tag: 12.1.1
     env:
       GF_INSTALL_PLUGINS: grafana-metricsdrilldown-app,grafana-exploretraces-app,grafana-lokiexplore-app
     grafana.ini:
