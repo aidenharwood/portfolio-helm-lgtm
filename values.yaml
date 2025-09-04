@@ -33,7 +33,7 @@ lgtm:
       replicas: 1
 
 minio:
-  enabled: true
+  replicas: 1
   accessKey: lgtm
   secretKey: minio123
   buckets:
