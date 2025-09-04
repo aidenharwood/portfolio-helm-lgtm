@@ -4,4 +4,4 @@ lgtm:
       GF_INSTALL_PLUGINS: grafana-metricsdrilldown-app,grafana-exploretraces-app,grafana-lokiexplore-app
   mimir:
     minio:
-      enabled: true
+      enabled: false
