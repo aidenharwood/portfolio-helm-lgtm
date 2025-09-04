@@ -26,3 +26,5 @@ lgtm:
   mimir:
     minio:
       rootUser: grafana-tempo
+    ingester:
+      replicas: 1
