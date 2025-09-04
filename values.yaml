@@ -11,15 +11,14 @@ lgtm:
     minio:
       enabled: false
     structuredConfig:
-      overrides:
-        common:
-          storage:
-            type: s3
-            s3:
-              endpoint: minio.local:9000
-              insecure: true
-              access_key_id: lgtm
-              secret_access_key: minio123
+      common:
+        storage:
+          backend: s3
+          s3:
+            endpoint: minio.local:9000
+            insecure: true
+            access_key_id: lgtm
+            secret_access_key: minio123
   mimir:
     minio:
       enabled: false
@@ -28,7 +27,7 @@ lgtm:
     structuredConfig:
       common:
         storage:
-          type: s3
+          backend: s3
           s3:
             endpoint: minio.local:9000
             insecure: true
