@@ -1,3 +1,9 @@
-# lgtm:
-  # minio:
-  #   enabled: false
+lgtm:
+  grafana:
+    plugins:
+      - grafana-metricsdrilldown-app
+      - grafana-exploretraces-app
+      - grafana-lokiexplore-app
+
+  minio:
+    enabled: true
