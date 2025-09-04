@@ -45,8 +45,8 @@ lgtm:
 
 minio:
   replicas: 4
-  accessKey: lgtm
-  secretKey: minio123
+  rootUser: lgtm
+  rootPassword: minio123
   resources:
     requests:
       cpu: 100m
