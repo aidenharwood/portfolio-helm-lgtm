@@ -17,7 +17,7 @@ lgtm:
       type: s3
       s3:
         bucketnames: mimir-ruler
-        endpoint: minio.minio.svc.cluster.local:9000
+        endpoint: minio.local:9000
         insecure: true
         access_key_id: lgtm
         secret_access_key: minio123
@@ -25,7 +25,7 @@ lgtm:
       type: s3
       s3:
         bucketnames: mimir-tsdb
-        endpoint: minio.minio.svc.cluster.local:9000
+        endpoint: minio:9000
         insecure: true
         access_key_id: lgtm
         secret_access_key: minio123
