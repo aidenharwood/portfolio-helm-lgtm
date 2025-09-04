@@ -3,7 +3,7 @@ lgtm:
     env:
       GF_INSTALL_PLUGINS: grafana-metricsdrilldown-app,grafana-exploretraces-app,grafana-lokiexplore-app
   tempo:
-    mimir:      
+    minio:      
       buckets:
         - name: tempo-traces
           policy: none
