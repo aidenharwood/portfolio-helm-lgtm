@@ -1,4 +1,5 @@
 lgtm:
   mimir:
     minio:
-      # enabled: false
+      persistence:
+        storageClass: standard
