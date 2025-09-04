@@ -17,7 +17,7 @@ lgtm:
             backend: s3
             s3:
               bucket: tempo-traces
-              endpoint: lgtm-minio:9000
+              endpoint: minio-minio.minio.svc.cluster.local:9000
               insecure: true
               access_key: lgtm
               secret_key: minio123
@@ -33,7 +33,7 @@ lgtm:
           storage:
             backend: s3
             s3:
-              endpoint: lgtm-minio:9000
+              endpoint: minio-minio.minio.svc.cluster.local:9000
               insecure: true
               access_key_id: lgtm
               secret_access_key: minio123
@@ -46,27 +46,3 @@ lgtm:
         ruler_storage:
           s3:
             bucket_name: mimir-ruler
-
-minio:
-  replicas: 2
-  rootUser: lgtm
-  rootPassword: minio123
-  persistence:
-    size: 5Gi
-  resources:
-    requests:
-      cpu: 100m
-      memory: 128Mi
-  buckets:
-    - name: tempo-traces
-      policy: none
-      purge: false
-    - name: mimir-ruler
-      policy: none
-      purge: false
-    - name: mimir-tsdb
-      policy: none
-      purge: false
-    - name: mimir-alertmanager
-      policy: none
-      purge: false
