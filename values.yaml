@@ -5,3 +5,13 @@ lgtm:
   mimir:
     minio:
       rootUser: grafana-tempo
+      buckets:
+        - name: enterprise-metrics-admin
+          policy: none
+          purge: false
+        - name: mimir-ruler
+          policy: none
+          purge: false
+        - name: mimir-tsdb
+          policy: none
+          purge: false
