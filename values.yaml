@@ -2,10 +2,18 @@ lgtm:
   grafana:
     env:
       GF_INSTALL_PLUGINS: grafana-metricsdrilldown-app,grafana-exploretraces-app,grafana-lokiexplore-app
-  mimir:
-    minio:
-      rootUser: grafana-tempo
+  tempo:
+    mimir:      
       buckets:
+        - name: tempo-traces
+          policy: none
+          purge: false
+        - name: enterprise-traces
+          policy: none
+          purge: false
+        - name: enterprise-traces-admin
+          policy: none
+          purge: false
         - name: enterprise-metrics-admin
           policy: none
           purge: false
@@ -15,3 +23,6 @@ lgtm:
         - name: mimir-tsdb
           policy: none
           purge: false
+  mimir:
+    minio:
+      rootUser: grafana-tempo
