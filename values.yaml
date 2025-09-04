@@ -9,35 +9,40 @@ lgtm:
         hide_version: true
   tempo:
     minio:
-      image:
-        tag: RELEASE.2025-07-23T15-54-02Z #
-      mcImage:                            # This should work out of the box 
-        tag: RELEASE.2025-07-21T05-28-08Z # 
-      buckets:
-        - name: tempo-traces
-          policy: none
-          purge: false
-        - name: enterprise-traces
-          policy: none
-          purge: false
-        - name: enterprise-traces-admin
-          policy: none
-          purge: false
-        - name: enterprise-metrics-admin
-          policy: none
-          purge: false
-        - name: mimir-ruler
-          policy: none
-          purge: false
-        - name: mimir-tsdb
-          policy: none
-          purge: false
+      enabled: false
   mimir:
     minio:
-      rootUser: grafana-tempo
-      image:
-        tag: RELEASE.2025-07-23T15-54-02Z #
-      mcImage:                            # This should work out of the box 
-        tag: RELEASE.2025-07-21T05-28-08Z # 
+      enabled: false
+    alertmanager_storage:
+      type: s3
+      s3:
+        bucketnames: mimir-ruler
+        endpoint: minio.minio.svc.cluster.local:9000
+        insecure: true
+        access_key_id: lgtm
+        secret_access_key: minio123
+    blocks_storage:
+      type: s3
+      s3:
+        bucketnames: mimir-tsdb
+        endpoint: minio.minio.svc.cluster.local:9000
+        insecure: true
+        access_key_id: lgtm
+        secret_access_key: minio123
     ingester:
       replicas: 1
+
+minio:
+  enabled: true
+  accessKey: lgtm
+  secretKey: minio123
+  buckets:
+  - name: tempo-traces
+    policy: none
+    purge: false
+  - name: mimir-ruler
+    policy: none
+    purge: false
+  - name: mimir-tsdb
+    policy: none
+    purge: false

@@ -9,3 +9,6 @@ dependencies:
     alias: lgtm
     version: 2.1.0
     repository: https://grafana.github.io/helm-charts
+  - name: minio
+    version: 8.0.10
+    repository: https://charts.min.io/
