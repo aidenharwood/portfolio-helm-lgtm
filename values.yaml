@@ -1,5 +1,4 @@
 lgtm:
-  loki:
+  mimir:
     minio:
-      persistence:
-        storageClass: standard
+      enabled: false
