@@ -1,4 +1,5 @@
-lgtm-distributed:
-  minio:
-    persistence:
-      storageClass: standard
+lgtm:
+  loki:
+    minio:
+      persistence:
+        storageClass: standard
