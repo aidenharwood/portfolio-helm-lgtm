@@ -17,7 +17,7 @@ lgtm:
             backend: s3
             s3:
               bucket: tempo-traces
-              endpoint: lgtm-minio.local:9000
+              endpoint: lgtm-minio:9000
               insecure: true
               access_key: lgtm
               secret_key: minio123
@@ -33,7 +33,7 @@ lgtm:
           storage:
             backend: s3
             s3:
-              endpoint: lgtm-minio.local:9000
+              endpoint: lgtm-minio:9000
               insecure: true
               access_key_id: lgtm
               secret_access_key: minio123
