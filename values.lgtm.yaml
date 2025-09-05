@@ -12,6 +12,10 @@ lgtm:
   tempo:
     minio:
       enabled: false
+    ingester:
+      replicas: 2
+    distributor:
+      replicas: 2
     traces:
       otlp:
         http:
