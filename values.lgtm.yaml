@@ -14,8 +14,9 @@ lgtm:
       enabled: false
     traces:
       otlp:
-        grpc:
+        http:
           enabled: true
+          
     tempo:
       structuredConfig:
         storage:
