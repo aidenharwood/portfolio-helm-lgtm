@@ -43,6 +43,12 @@ lgtm:
           enabled: true
     metricsGenerator:
       enabled: true
+    overrides:
+      defaults:
+        metrics_generator:
+          processors:
+            - service-graphs
+            - span-metrics
     tempo:
       structuredConfig:
         storage:
