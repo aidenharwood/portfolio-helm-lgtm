@@ -44,6 +44,8 @@ lgtm:
   mimir:
     minio:
       enabled: false
+    rollout_operator:
+      enabled: false
     metaMonitoring:
       grafanaAgent:
         installOperator: false
