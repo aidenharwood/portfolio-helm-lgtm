@@ -12,8 +12,6 @@ lgtm:
   tempo:
     minio:
       enabled: false
-    distributor:
-      replicas: 2
     traces:
       otlp:
         http:
@@ -37,10 +35,6 @@ lgtm:
   mimir:
     minio:
       enabled: false
-    ingester:
-      replicas: 1
-    distributor:
-      replicas: 2
     mimir:
       structuredConfig:
         common:
