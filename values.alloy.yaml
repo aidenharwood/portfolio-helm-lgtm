@@ -1,44 +1,45 @@
 alloy:
-  configMap:
-    content: |
-      logging {
-        level = "INFO"
-        format = "logfmt"
-      }
+  alloy:
+    configMap:
+      content: |
+        logging {
+          level = "INFO"
+          format = "logfmt"
+        }
 
-      discovery.kubernetes "pods" {
-        role = "pod"
-      }
+        discovery.kubernetes "pods" {
+          role = "pod"
+        }
 
-      discovery.kubernetes "nodes" {
-        role = "node"
-      }
+        discovery.kubernetes "nodes" {
+          role = "node"
+        }
 
-      discovery.kubernetes "services" {
-        role = "service"
-      }
+        discovery.kubernetes "services" {
+          role = "service"
+        }
 
-      discovery.kubernetes "endpoints" {
-        role = "endpoint"
-      }
-      
-      discovery.kubernetes "endpointslices" {
-        role = "endpointslice"
-      }
+        discovery.kubernetes "endpoints" {
+          role = "endpoint"
+        }
+        
+        discovery.kubernetes "endpointslices" {
+          role = "endpointslice"
+        }
 
-      discovery.kubernetes "ingresses" {
-        role = "ingress"
-      }
+        discovery.kubernetes "ingresses" {
+          role = "ingress"
+        }
 
-      prometheus.exporter.cadvisor {
+        prometheus.exporter.cadvisor {
 
-      }
+        }
 
-      prometheus.scrape "cadvisor" {
-        targets    = prometheus.exporter.cadvisor.example.targets
-        forward_to = [ prometheus.remote_write.default.receiver ]
-      }
+        prometheus.scrape "cadvisor" {
+          targets    = prometheus.exporter.cadvisor.example.targets
+          forward_to = [ prometheus.remote_write.default.receiver ]
+        }
 
-      prometheus.remote_write "default" {
-        url = "http://lgtm-mimir-distributor.lgtm.svc.cluster.local:8080/api/v1/push"
-      }
+        prometheus.remote_write "default" {
+          url = "http://lgtm-mimir-distributor.lgtm.svc.cluster.local:8080/api/v1/push"
+        }
