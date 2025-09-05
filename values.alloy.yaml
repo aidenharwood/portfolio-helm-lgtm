@@ -2,6 +2,10 @@ alloy:
   alloy:
     configMap:
       content: |
+        livedebugging {
+          enabled = true
+        }
+        
         logging {
           level = "info"
           format = "logfmt"
