@@ -10,6 +10,8 @@ lgtm:
         org_role: Viewer
         hide_version: true
   tempo:
+    rollout_operator:
+      enabled: false
     minio:
       enabled: false
     metaMonitoring:
