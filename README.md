@@ -1,3 +1,3 @@
-# portfolio-helm-metallb
+# portfolio-helm-lgtm
 
-A simple helm repo for metallb config
+A simple helm repo for LGTM stack config
