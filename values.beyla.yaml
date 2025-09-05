@@ -1,1 +1,7 @@
-# beyla:
+beyla:
+  contextPropagation:
+    enabled:  true
+  config:
+    data:
+      otel_traces_export:
+        endpoint: lgtm-tempo-distributor:4317

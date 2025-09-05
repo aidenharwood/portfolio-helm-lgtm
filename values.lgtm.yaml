@@ -13,6 +13,10 @@ lgtm:
     minio:
       enabled: false
     tempo:
+      traces:
+        otlp:
+          grpc:
+            enabled: true
       structuredConfig:
         storage:
           trace:
