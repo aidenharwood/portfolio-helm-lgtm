@@ -45,6 +45,7 @@ alloy:
         prometheus.scrape "argocd" {
           targets    = [
             {"__address__" = "bootstrap-argocd-application-controller-metrics.argocd.svc.cluster.local:8082", "instance" = "argocd"},
+            {"__address__" = "lgtm-tempo-metrics-generator.lgtm.svc.cluster.local:3100", "instance" = "tempo-metrics-generator"},
           ]
           forward_to = [ prometheus.remote_write.default.receiver ]
         }
@@ -57,3 +58,26 @@ alloy:
             }
           }
         }
+
+        loki.write "default" {
+          endpoint {
+            url = "http://lgtm-loki.lgtm.svc.cluster.local:3100/loki/api/v1/push"
+          }
+        }
+        
+        otelcol.exporter.otlphttp "default" {
+          client {
+            endpoint = "http://lgtm-tempo-distributor.lgtm.svc.cluster.local:4318"
+          }
+        }
+
+        otelcol.receiver.otlp "default" {
+          grpc {}
+          http {}
+          output {
+            metrics = [ prometheus.remote_write.default.receiver ]
+            traces  = [ otelcol.exporter.otlphttp.default.sender ]
+            logs    = [ loki.write.default.sender ]
+          }
+        }
+
