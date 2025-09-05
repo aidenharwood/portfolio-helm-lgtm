@@ -46,7 +46,10 @@ lgtm:
     overrides:
       defaults:
         metrics_generator:
-          processors: ["service-graphs", "span-metrics"]
+          processor:
+            processors:
+              - service-graphs
+              - span-metrics
     tempo:
       structuredConfig:
         storage:
