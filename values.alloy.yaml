@@ -56,7 +56,7 @@ alloy:
           forward_to = [ prometheus.remote_write.default.receiver ]
         }
 
-        prometheus.scrape "metrics-server" {
+        prometheus.scrape "metrics_server" {
           targets    = [
             {"__address__" = "metrics-server.kube-system.svc.cluster.local:443", "instance" = "kubernetes-metrics-server"},
           ]
