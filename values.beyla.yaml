@@ -4,4 +4,4 @@ beyla:
   config:
     data:
       otel_traces_export:
-        endpoint: lgtm-tempo-distributor:4317
+        endpoint: http://lgtm-tempo-distributor:4318
