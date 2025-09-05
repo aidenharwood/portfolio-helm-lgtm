@@ -43,7 +43,7 @@ lgtm:
           enabled: true
     metricsGenerator:
       enabled: true
-    overrides:
+    overrides: |
       defaults:
         metrics_generator:
           processors: [service-graphs, span-metrics]
