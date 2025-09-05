@@ -3,7 +3,7 @@ lgtm:
     image:
       tag: 12.1.1
     env:
-      GF_INSTALL_PLUGINS: grafana-metricsdrilldown-app,grafana-exploretraces-app,grafana-lokiexplore-app
+      # GF_INSTALL_PLUGINS: grafana-metricsdrilldown-app,grafana-exploretraces-app,grafana-lokiexplore-app
     grafana.ini:
       auth.anonymous:
         enabled: true
