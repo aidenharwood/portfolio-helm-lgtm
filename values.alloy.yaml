@@ -45,7 +45,27 @@ alloy:
         prometheus.scrape "argocd" {
           targets    = [
             {"__address__" = "bootstrap-argocd-application-controller-metrics.argocd.svc.cluster.local:8082", "instance" = "argocd"},
+          ]
+          forward_to = [ prometheus.remote_write.default.receiver ]
+        }
+
+        prometheus.scrape "tempo" {
+          targets    = [
             {"__address__" = "lgtm-tempo-metrics-generator.lgtm.svc.cluster.local:3100", "instance" = "tempo-metrics-generator"},
+          ]
+          forward_to = [ prometheus.remote_write.default.receiver ]
+        }
+
+        prometheus.scrape "metrics-server" {
+          targets    = [
+            {"__address__" = "metrics-server.kube-system.svc.cluster.local:443", "instance" = "kubernetes-metrics-server"},
+          ]
+          forward_to = [ prometheus.remote_write.default.receiver ]
+        }
+
+        prometheus.scrape "hubble" {
+          targets    = [
+            {"__address__" = "hubble-metrics.kube-system.svc.cluster.local:9965", "instance" = "hubble-metrics-metrics"},
           ]
           forward_to = [ prometheus.remote_write.default.receiver ]
         }

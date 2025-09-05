@@ -1,6 +1,6 @@
 beyla:
   contextPropagation:
-    enabled:  true
+    enabled: true
   config:
     data:
       otel_traces_export:
