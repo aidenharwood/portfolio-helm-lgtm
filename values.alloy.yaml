@@ -44,7 +44,7 @@ alloy:
 
         prometheus.scrape "argocd" {
           targets    = [
-            {"__address__" = "bootstrap-argocd-application-controller-metrics.argocd.svc.cluster.local:8083", "instance" = "argocd"},
+            {"__address__" = "bootstrap-argocd-application-controller-metrics.argocd.svc.cluster.local:8082", "instance" = "argocd"},
           ]
           forward_to = [ prometheus.remote_write.default.receiver ]
         }
