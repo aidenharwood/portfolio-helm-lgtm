@@ -3,7 +3,7 @@ alloy:
     configMap:
       content: |
         logging {
-          level = "INFO"
+          level = "info"
           format = "logfmt"
         }
 
