@@ -12,6 +12,10 @@ lgtm:
   tempo:
     minio:
       enabled: false
+    metaMonitoring:
+      grafanaAgent:
+        installOperator: false
+        enabled: false
     ingester:
       replicas: 2
     distributor:
@@ -23,10 +27,6 @@ lgtm:
           enabled: true
     metricsGenerator:
       enabled: true
-    metaMonitoring:
-      grafanaAgent:
-        installOperator: false
-        enabled: false
     tempo:
       structuredConfig:
         storage:
@@ -42,6 +42,10 @@ lgtm:
   mimir:
     minio:
       enabled: false
+    metaMonitoring:
+      grafanaAgent:
+        installOperator: false
+        enabled: false
     mimir:
       structuredConfig:
         common:
