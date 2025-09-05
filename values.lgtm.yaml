@@ -9,6 +9,11 @@ lgtm:
         enabled: true
         org_role: Viewer
         hide_version: true
+    dashboards:
+      prometheus-stats:
+        gnedId: 445
+        revision: 1
+        datasource: Mimir
   tempo:
     rollout_operator:
       enabled: false
