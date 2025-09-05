@@ -21,6 +21,8 @@ lgtm:
       otlp:
         http:
           enabled: true
+    metricsGenerator:
+      enabled: true
     metaMonitoring:
       grafanaAgent:
         installOperator: false
