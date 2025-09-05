@@ -16,7 +16,8 @@ lgtm:
       otlp:
         http:
           enabled: true
-          
+    grafanaAgent:
+      enabled: false
     tempo:
       structuredConfig:
         storage:
