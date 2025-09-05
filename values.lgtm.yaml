@@ -16,6 +16,7 @@ lgtm:
       replicas: 2
     distributor:
       replicas: 2
+      affinity: {} # Disable pod anti-affinity for single node clusters
     traces:
       otlp:
         http:
