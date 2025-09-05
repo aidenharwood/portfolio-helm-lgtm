@@ -9,3 +9,11 @@ dependencies:
     alias: lgtm
     version: 2.1.0
     repository: https://grafana.github.io/helm-charts
+  - name: alloy
+    alias: alloy
+    version: 0.12.6
+    repository: https://grafana.github.io/helm-charts
+  - name: beyla
+    alias: beyla
+    version: 1.7.3
+    repository: https://grafana.github.io/helm-charts
