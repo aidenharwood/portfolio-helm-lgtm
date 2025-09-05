@@ -15,6 +15,14 @@ lgtm:
           gnedId: 445
           revision: 1
           datasource: Mimir
+        kubernetes-stats:
+          gnedId: 315
+          revision: 3
+          datasource: Mimir
+        argocd-overview:
+          gnedId: 19993
+          revision: 4
+          datasource: Mimir
   tempo:
     rollout_operator:
       enabled: false

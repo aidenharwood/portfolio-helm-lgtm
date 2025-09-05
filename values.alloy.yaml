@@ -42,6 +42,13 @@ alloy:
           forward_to = [ prometheus.remote_write.default.receiver ]
         }
 
+        prometheus.scrape "argocd" {
+          targets    = [
+            {"__address__" = "argocd-server.argocd.svc.cluster.local:8083", "instance" = "argocd"},
+          ]
+          forward_to = [ prometheus.remote_write.default.receiver ]
+        }
+
         prometheus.remote_write "default" {
           endpoint {
             url     = "http://lgtm-mimir-distributor.lgtm.svc.cluster.local:8080/api/v1/push"
