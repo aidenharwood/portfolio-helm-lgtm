@@ -38,7 +38,7 @@ lgtm:
     ingester:
       replicas: 1
     distributor:
-      replicas: 1
+      replicas: 2
     mimir:
       structuredConfig:
         common:
