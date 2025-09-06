@@ -43,6 +43,7 @@ lgtm:
           enabled: true
     metricsGenerator:
       enabled: true
+      replicas: 1
       config:
         storage:
           remote_write:
