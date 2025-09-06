@@ -45,6 +45,12 @@ lgtm:
       enabled: true
       replicas: 1
       config:
+        processor:
+          service_graphs:
+            peer_attributes:
+              - peer.service
+              - db.name
+              - db.system
         storage:
           remote_write:
             - url: http://lgtm-mimir-distributor.lgtm.svc.cluster.local:8080/api/v1/push
