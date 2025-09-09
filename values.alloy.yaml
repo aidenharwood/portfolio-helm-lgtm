@@ -70,6 +70,13 @@ alloy:
           forward_to = [ prometheus.remote_write.default.receiver ]
         }
 
+        prometheus.scrape "tetragon" {
+          targets    = [
+            {"__address__" = "tetragon-operator-metrics.kube-system.svc.cluster.local:2113", "instance" = "tetragon-metrics"},
+          ]
+          forward_to = [ prometheus.remote_write.default.receiver ]
+        }
+
         prometheus.remote_write "default" {
           endpoint {
             url     = "http://lgtm-mimir-distributor.lgtm.svc.cluster.local:8080/api/v1/push"
