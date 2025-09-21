@@ -19,4 +19,4 @@ spec:
               service:
                 name: lgtm-grafana
                 port:
-                  name: http
+                  number: 80
